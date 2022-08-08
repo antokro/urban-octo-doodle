@@ -2,8 +2,10 @@
 	export const prerender = true;
 </script>
 
-<script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+<script>
+	import { page } from '$app/stores'
+	const name = $page.url.searchParams.get('name')?.split(',')	
+	const pronoun  = name && name?.length >1 ? 'euch' : 'dich'
 </script>
 
 <svelte:head>
@@ -11,51 +13,14 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
+<section class="mx_auto p-10 md:p-12 font-sans">
+	<div class='p-8 rounded bg-accentColor text-slate-200' >
+		<h2 class="text-base  my-5">
+			Liebe {name?.join(', lieber ')},</h2>
+        <p class='  text-sm my-5'>Anlässlich meines Geburtstages lade ich {pronoun} ganz herzlich zu einem kleinen Brunch bei mir ein. Das Motto ist dieses Jahr Türkei 🇹🇷
+      </p>
+	  <p class=' text-sm my-5'>📅 28.8.2022 um 10 Uhr</p>
+	  <p class=' text-sm my-5'>Sag mir bitte kurz Bescheid, ob du kommen kannst! Ich freue mich auf {pronoun}! </p>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+	</div>
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
