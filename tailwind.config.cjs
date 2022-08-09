@@ -9,10 +9,8 @@ module.exports = {
 			},
 			colors: {
 				...defaultTheme.colors,
-				primaryColor: '#D8DBE2',
-				secondaryColor: '#A9BCD0',
-				tertiaryColor: '#526357',
-				accentColor: '#B88E9E'
+				secondaryColor: '#edba80',
+				accentColor: '#53615f'
 			}
 		}
 	},
