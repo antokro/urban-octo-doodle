@@ -2,12 +2,21 @@
 	export const prerender = true;
 </script>
 
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
-	const name = $page.url.searchParams.get('name')?.split(',');
-	const pronoun = name && name?.length > 1 ? 'euch' : 'dich';
-	const verb = name && name?.length > 1 ? 'Lasst' : 'Lass';
+	import { onMount } from 'svelte';
+	let name: string[] | undefined = [''];
+	let pronoun = '';
+	let verb = ''
+	onMount(() => {
+		console.log('the component has mounted');
+		name = $page.url.searchParams.get('name')?.split(',');
+		pronoun = name && name?.length > 1 ? 'euch' : 'dich';
+		verb = name && name?.length > 1 ? 'Lasst' : 'Lass';
+	});
 </script>
+
+
 
 <svelte:head>
 	<title>Home</title>
@@ -21,11 +30,11 @@
 		</h2>
 		<p class="  text-sm my-5">
 			Anlässlich meines Geburtstages lade ich {pronoun} ganz herzlich zu einem kleinen Brunch bei mir
-			ein.<br/> Es wird wieder gemütlich mit leckeren Köstlichkeiten. {verb} {pronoun} überraschen! 
+			ein.<br/> Es wird wieder gemütlich mit leckeren Köstlichkeiten.<br/> {verb} {pronoun} überraschen! 
 		</p>
-		<p class=" text-sm my-5">📅 28.8.2022 um 10 Uhr</p>
-		<p class=" text-sm my-5">
-			RSVP an mich bitte. <br/> Ich freue mich auf {pronoun}!
+		<p class=" text-sm my-5">📅  28.8.2022 ab 11 Uhr</p>
+		<p class=" text-sm my-5 text-center">
+			RSVP <br/> Ich freue mich auf {pronoun}!
 		</p>
 	</div>
 </section>

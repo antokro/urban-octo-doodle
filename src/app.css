@@ -7,17 +7,8 @@
 :root {
 	font-family: 'Poppins', sans-serif;
 	font-family: 'Rock Salt', cursive;
-	--font-mono: 'Fira Mono', monospace;
-	--pure-white: #ffffff;
 	--primary-color: rgb(223, 206, 202);
-	--secondary-color: #A9BCD0;
-	--tertiary-color: #526357;
-	--accent-color: #A1687E;
-	--heading-color: rgb(0, 0, 0, 0.7);
-	--text-color: #444444;
-	--background-without-opacity: rgb(255, 255, 255, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
+
 }
 
 body {
@@ -30,12 +21,6 @@ body {
 background-repeat: no-repeat;
 background-position: center;}
 
-#svelte {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-}
-
 h1,
 h2{
 font-family: 'Rock Salt', cursive;
@@ -44,37 +29,6 @@ font-family: 'Rock Salt', cursive;
 p {
 	font-family: 'Poppins',sans-serif;
 	line-height: 1.5;
-}
-
-a {
-	color: var(--accent-color);
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--text-color);
-}
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
 }
 
 @media (min-width: 720px) {
