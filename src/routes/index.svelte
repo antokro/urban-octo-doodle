@@ -19,8 +19,8 @@
 
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Einladung</title>
+	<meta name="description" content="Einladung" />
 </svelte:head>
 
 <section class="mx_auto p-10 md:p-12 font-sans md:justify-center md:flex">
